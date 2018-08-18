@@ -4,7 +4,7 @@ ASIC resistant, 256Bit, cryptographic hashing algorithm.
 Works by requiring the client to solve an np-hard problem (https://en.wikipedia.org/wiki/NP-hardness)
 before they are able to determine the hash value. In this case we use the traveling salesman problem.
 
-The algorithm generates a list of 2D points derived by the inputed data bytes.
+The algorithm generates a list of 2D points derived from the input data bytes.
 The client is required to find all unique permutations of these points and
 sort them in ascending order by travel distance.
 This ordering and the point bytes are then used generate a fingerprint of the original data
