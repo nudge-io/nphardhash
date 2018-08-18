@@ -13,9 +13,9 @@ func TestHash(t *testing.T) {
 	for i := 0; i < 100000; i += 1 {
 		h := fmt.Sprintf("%x", i)
 
-		hash := nph.HashBytes([]byte("hello worldX" + h))
-		if hash[0] == 0 {
-			fmt.Println(hash)
+		hashBytes := nph.HashBytes([]byte("hello worldX" + h))
+		if hashBytes[0] == 0 {
+			fmt.Println(hashBytes)
 			fmt.Println(i)
 			//break
 		}
