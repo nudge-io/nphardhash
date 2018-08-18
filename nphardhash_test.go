@@ -1,4 +1,4 @@
-package nphash
+package nphardhash
 
 import (
 	"fmt"
