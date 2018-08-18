@@ -13,12 +13,12 @@ import (
 )
 
 //helper funcs
-func Factorial(n int) int {
-	if n == 0 {
-		return 1
-	}
-	return n * Factorial(n-1)
-}
+//func Factorial(n int) int {
+//	if n == 0 {
+//		return 1
+//	}
+//	return n * Factorial(n-1)
+//}
 
 func ArgSortConcatByteArrs(src_arr [][]uint8, arg_indexes []int) []uint8 {
 
