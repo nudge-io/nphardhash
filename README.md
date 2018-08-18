@@ -1,1 +1,3 @@
 # nphardhash
+
+Usage
