@@ -1,5 +1,6 @@
 package nphash
 
+//nudge.io: hashing algorithm used to generate asic resistant hashes.
 //uses bruteforce approach to generate path permutations. This could easily be optimized.
 
 //nphardhash
