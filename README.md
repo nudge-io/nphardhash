@@ -46,6 +46,6 @@ func main() {
 ## TODO
 - Possibly add version encoding bytes to the resulting digest
 so that the pointCount used to generate the hash can be retained
-and we can update the algorithm as while retaining backwards compatibility.
+and we can update the algorithm while retaining backwards compatibility.
 
 
