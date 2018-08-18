@@ -19,6 +19,10 @@ This translates to only those devices with significant memory capacity are able 
 and ASICs are quickly dropped off the network.
 
 
+## Install
+Run `go get github.com/nudgeplatform/nphardhash`
+
+
 ## Usage:
 ```
 import "github.com/nudgeplatform/nphardhash"
@@ -36,12 +40,11 @@ func main() {
 ```
 
 
-## Install
-Run `go get github.com/nudgeplatform/nphardhash`
 
 
-## TODO:
--Possibly add version encoding bytes to the resulting digest
+
+## TODO
+- Possibly add version encoding bytes to the resulting digest
 so that the pointCount used to generate the hash can be retained
 and we can update the algorithm as while retaining backwards compatibility.
 
