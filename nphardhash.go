@@ -8,7 +8,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	"github.com/minio/sha256-simd"
+	"golang.org/x/crypto/sha3"
 	"math"
 	"sort"
 )
@@ -20,6 +20,13 @@ import (
 //	}
 //	return n * Factorial(n-1)
 //}
+
+func internalHash(data []byte) [32]byte {
+	var buf [32]byte
+	sha3.ShakeSum256(buf[:], data)
+	return buf
+	//return sha256.Sum256(data)
+}
 
 func ArgSortConcatByteArrs(src_arr [][]uint8, arg_indexes []int) []uint8 {
 
@@ -131,12 +138,12 @@ func (n *npHash) generatePoints(bytes []uint8) []point {
 	}
 
 	//hash once
-	byteArr := sha256.Sum256(bytes)
+	byteArr := internalHash(bytes)
 
 	//iterate for points
 	points := make([]point, pointCount)
 	for x := 0; x < pointCount; x += 2 {
-		byteArr = sha256.Sum256(byteArr[:])
+		byteArr = internalHash(byteArr[:])
 
 		//new points
 		pointA := NewPointFromBytes(byteArr[:16])
@@ -249,7 +256,7 @@ func (n *npHash) HashBytes(hashBytes []uint8) [32]byte {
 
 	//
 	combineBytes := bytes.Join(pathByteArrs, nil)
-	resultHash := sha256.Sum256(combineBytes)
+	resultHash := internalHash(combineBytes)
 
 	return resultHash
 }
